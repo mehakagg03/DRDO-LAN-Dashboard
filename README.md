@@ -29,19 +29,18 @@ A lightweight, interactive dashboard built using HTML, CSS, and JavaScript to vi
 • Dashboard will load automatically 🎉
 
 ## 📊 Charts Included ##
-• Gender Distribution → Doughnut Chart
 
 • Interns by State → Bar Chart
 
-• Interns by College → Horizontal Bar Chart
+• Interns by Affiliation → Horizontal Bar Chart
 
-• Interns by Scientist → Top 10 Chart
+• Interns by Mentors → Top 10 Chart
 
 • Domain Distribution → Doughnut Chart
 
 • Department Distribution → Bar Chart
 
-• Duration Distribution → Bar Chart
+• Duration Distribution → Pie Chart
 
 ## ⚙️ Technologies Used ##
 • HTML5
