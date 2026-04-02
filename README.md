@@ -12,13 +12,7 @@ A lightweight, interactive dashboard built using HTML, CSS, and JavaScript to vi
 
 🔍 Year-wise filtering
 
-📌 KPI cards:
-
-• Total Interns
-
-• Male Interns
-
-• Female Interns
+📌 KPI cards
 
 🧠 Smart column mapping (handles different CSV formats)
 
