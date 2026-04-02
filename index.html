@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interns Dashboard</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Chart.js -->
+  <script src="chart.js"></script>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <img src="logo.png" class="logo" alt="DRDO Logo">
+  <h2>INTERNS DASHBOARD</h2>
+
+  <div class="card filter">
+    <select id="yearFilter"></select>
+  </div>
+</div>
+
+<!-- UPLOAD -->
+<div class="container">
+  <div class="card upload-card">
+    <p><b>Upload CSV File</b></p>
+    <input type="file" id="fileInput" accept=".csv">
+  </div>
+</div>
+
+<!-- KPI CARDS -->
+<div class="container">
+  <div class="card kpi">
+    <h3>Total Interns</h3>
+    <p id="total">0</p>
+  </div>
+
+  <div class="card kpi">
+    <h3>Male Interns</h3>
+    <p id="male">0</p>
+  </div>
+
+  <div class="card kpi">
+    <h3>Female Interns</h3>
+    <p id="female">0</p>
+  </div>
+</div>
+
+<!-- CHARTS -->
+<div class="container charts-container">
+
+  <div class="card chart">
+    <h3>Interns by State</h3>
+    <canvas id="stateChart"></canvas>
+  </div>
+
+  <div class="card chart">
+    <h3>Interns by College</h3>
+    <canvas id="collegeChart"></canvas>
+  </div>
+
+  <div class="card chart">
+    <h3>Interns by Professor</h3>
+    <canvas id="profChart"></canvas>
+  </div>
+
+  <div class="card chart">
+    <h3>Interns by Department</h3>
+    <canvas id="departmentChart"></canvas>
+  </div>
+
+  <div class="card chart">
+    <h3>Interns by Duration</h3>
+    <canvas id="durationChart"></canvas>
+  </div>
+
+  <div class="card chart">
+    <h3>Interns by Domain</h3>
+    <canvas id="domainChart"></canvas>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
