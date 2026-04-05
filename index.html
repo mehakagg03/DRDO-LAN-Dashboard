@@ -1,87 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Interns Dashboard</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <!-- External CSS -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Chart.js -->
-  <script src="chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
 <!-- HEADER -->
 <div class="header">
-  <img src="logo.png" class="logo" alt="DRDO Logo">
-  <h2>INTERNS DASHBOARD</h2>
+  <img src="logo.png" alt="Logo" class="logo">
 
-  <div class="card filter">
-    <select id="yearFilter"></select>
+  <div class="title-group">
+    <h1>SSPL DRDO</h1>
+    <p>HR DATA DASHBOARD</p>
+  </div>
+
+  <div></div> 
+</div>
+
+<div class="card upload-card">
+  <h3>Upload Dataset</h3>
+
+  <label for="fileInput" class="file-label">
+    Choose File
+  </label>
+  <input type="file" id="fileInput" accept=".csv" hidden>
+
+</div>
+
+<!-- STEP 2: TABLE PREVIEW -->
+<div id="tableSection" class="container hidden">
+  <div class="card table-card">
+    <h3>Dataset Preview</h3>
+    <table>
+      <thead id="tableHead"></thead>
+      <tbody id="tableBody"></tbody>
+    </table>
   </div>
 </div>
 
-<!-- UPLOAD -->
-<div class="container">
-  <div class="card upload-card">
-    <p><b>Upload CSV File</b></p>
-    <input type="file" id="fileInput" accept=".csv">
-  </div>
+<!-- STEP 3: BUTTON -->
+<div id="dashboardBtnContainer" class="container hidden">
+  <button id="viewDashboardBtn" class="view-btn">View Dashboard</button>
 </div>
 
-<!-- KPI CARDS -->
-<div class="container">
-  <div class="card kpi">
-    <h3>Total Interns</h3>
-    <p id="total">0</p>
+<!-- STEP 4: DASHBOARD -->
+<div id="dashboard" class="hidden">
+
+  <!-- KPI -->
+  <div class="container">
+    <div class="card kpi">
+      <h3>Total Interns</h3>
+      <p id="total">0</p>
+    </div>
+
+    <div class="card kpi">
+      <h3>Male</h3>
+      <p id="male">0</p>
+    </div>
+
+    <div class="card kpi">
+      <h3>Female</h3>
+      <p id="female">0</p>
+    </div>
   </div>
 
-  <div class="card kpi">
-    <h3>Male Interns</h3>
-    <p id="male">0</p>
+  <!-- FILTER -->
+  <div class="container filter">
+    <div class="card">
+      <select id="yearFilter">
+        <option value="all">All Years</option>
+      </select>
+    </div>
   </div>
 
-  <div class="card kpi">
-    <h3>Female Interns</h3>
-    <p id="female">0</p>
-  </div>
-</div>
-
-<!-- CHARTS -->
-<div class="container charts-container">
-
-  <div class="card chart">
-    <h3>Interns by State</h3>
-    <canvas id="stateChart"></canvas>
-  </div>
-
-  <div class="card chart">
-    <h3>Interns by Affiliation</h3>
-    <canvas id="collegeChart"></canvas>
-  </div>
-
-  <div class="card chart">
-    <h3>Interns by Mentor</h3>
-    <canvas id="profChart"></canvas>
-  </div>
-
-  <div class="card chart">
-    <h3>Interns by Department</h3>
-    <canvas id="departmentChart"></canvas>
-  </div>
-
-  <div class="card chart">
-    <h3>Interns by Duration</h3>
-    <canvas id="durationChart"></canvas>
-  </div>
-
-  <div class="card chart">
-    <h3>Interns by Domain</h3>
-    <canvas id="domainChart"></canvas>
+  <!-- CHARTS -->
+  <div class="charts-container">
+    <div class="card chart"><h3>State</h3><canvas id="stateChart"></canvas></div>
+    <div class="card chart"><h3>Affiliation</h3><canvas id="collegeChart"></canvas></div>
+    <div class="card chart"><h3>Mentor</h3><canvas id="profChart"></canvas></div>
+    <div class="card chart"><h3>Department</h3><canvas id="departmentChart"></canvas></div>
+    <div class="card chart"><h3>Domain</h3><canvas id="domainChart"></canvas></div>
+    <div class="card chart"><h3>Duration</h3><canvas id="durationChart"></canvas></div>
   </div>
 
 </div>
