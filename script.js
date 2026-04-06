@@ -146,8 +146,20 @@ function updateDashboard(selectedYear) {
 
   // CHARTS 
   charts.state = createChart("stateChart", "bar", state);
-  charts.college = createChart("collegeChart", "bar", college);
-  charts.prof = createChart("profChart", "bar", prof);
+  charts.college = createChart("collegeChart", "line", college);
+  charts.prof = new Chart(document.getElementById("profChart"), {
+  type: 'bar',
+  data: {
+    labels: Object.keys(prof),
+    datasets: [{
+      label: "Interns",
+      data: Object.values(prof)
+    }]
+  },
+  options: {
+    indexAxis: 'y' 
+  }
+});
   charts.domain = createChart("domainChart", "doughnut", domain, "");
   charts.department = createChart("departmentChart", "bar", department);
   charts.duration = createChart("durationChart", "pie", duration, "");
